@@ -1,0 +1,20 @@
+</head>
+<body>
+    {% if messages %}
+        <div class="messages">
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    <label for="search">Search:</label>
+    <input
+        type="text" name="search" required>
+    <br>
+    <button type="submit">submit</button>
+</form>
